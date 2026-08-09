@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 860px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#language,
+#city {
+  position: absolute;
+  top: 1rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: white;
+  color: #444;
+  font-family: inherit;
+}
+
+#language {
+  right: 1rem;
+}
+
+#city {
+  left: 1rem;
+}
+
+h1 {
+  margin-top: 0;
+  color: #2b2b52;
+}
+
+h2 {
+  color: #2b2b52;
+  font-size: 1rem;
+  text-align: left;
+  margin: 1.5rem 0 0.25rem;
+}
+
+.hint {
+  color: #666;
+  margin-top: -0.5rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+th {
+  color: #898781;
+  font-weight: 600;
+  text-align: right;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 2px solid #e1e0d9;
+  white-space: nowrap;
+}
+
+td {
+  text-align: right;
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid #eee;
+  font-variant-numeric: tabular-nums;
+}
+
+th:first-child,
+td.date {
+  text-align: left;
+  color: #2b2b52;
+  white-space: nowrap;
+}
+
+#charts {
+  margin-top: 1rem;
+}
+
+.footer {
+  margin: 1.5rem 0 0;
+  font-size: 0.8rem;
+}
+
+.footer a,
+.back {
+  color: #898781;
+  text-decoration: none;
+}
+
+.footer a:hover,
+.back:hover {
+  color: #2b2b52;
+  text-decoration: underline;
+}
+
+.back {
+  position: absolute;
+  top: 1.35rem;
+  left: 1rem;
+  font-size: 0.85rem;
+}
+
+/* model.html has the back link top-left, so its city select sits top-right */
+.card .back ~ #city {
+  left: auto;
+  right: 1rem;
+}
+
+.note {
+  color: #898781;
+  font-size: 0.8rem;
+  text-align: left;
+  margin: 0.5rem 0 1rem;
+}
+
+.bias {
+  color: #898781;
+  font-size: 0.7rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.tab {
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #444;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.tab:hover {
+  border-color: #2b2b52;
+  color: #2b2b52;
+}
+
+.tab.active {
+  background: #2b2b52;
+  border-color: #2b2b52;
+  color: white;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.chart-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.mini-chart {
+  flex: 1;
+  min-width: 240px;
+}
+
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+th.sortable:hover {
+  color: #2b2b52;
+}

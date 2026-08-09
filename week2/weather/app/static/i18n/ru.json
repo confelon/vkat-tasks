@@ -1,0 +1,14 @@
+{
+  "language": "Русский",
+  "model_link": "Проверка качества модели",
+  "readme_link": "Документация проекта",
+  "title": "прогноз на 30 дней",
+  "subtitle": "Погода на месяц вперёд по предсказанию ML-модели",
+  "date": "Дата",
+  "temperature": "Температура",
+  "humidity": "Влажность",
+  "pressure": "Давление",
+  "wind_speed": "Скорость ветра",
+  "precipitation": "Осадки",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "мм рт. ст.", "wind_speed": "м/с", "precipitation": "мм" }
+}

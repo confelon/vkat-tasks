@@ -1,0 +1,12 @@
+{
+  "language": "Polski",
+  "title": "prognoza 30-dniowa",
+  "subtitle": "Pogoda na miesiąc naprzód, przewidziana przez model ML",
+  "date": "Data",
+  "temperature": "Temperatura",
+  "humidity": "Wilgotność",
+  "pressure": "Ciśnienie",
+  "wind_speed": "Prędkość wiatru",
+  "precipitation": "Opady",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

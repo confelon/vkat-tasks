@@ -1,0 +1,12 @@
+{
+  "language": "Кыргызча",
+  "title": "30 күндүк болжол",
+  "subtitle": "Аба ырайы бир ай алдыга, ML модели болжогон",
+  "date": "Күнү",
+  "temperature": "Температура",
+  "humidity": "Нымдуулук",
+  "pressure": "Басым",
+  "wind_speed": "Шамал ылдамдыгы",
+  "precipitation": "Жаан-чачын",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "мм рт. ст.", "wind_speed": "м/с", "precipitation": "мм" }
+}

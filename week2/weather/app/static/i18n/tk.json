@@ -1,0 +1,12 @@
+{
+  "language": "Türkmençe",
+  "title": "30 günlük çaklama",
+  "subtitle": "Howa bir aý öňünden, ML modeliniň çaklamasy",
+  "date": "Sene",
+  "temperature": "Temperatura",
+  "humidity": "Çyglylyk",
+  "pressure": "Basyş",
+  "wind_speed": "Ýeliň tizligi",
+  "precipitation": "Ygal",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mm s.s.", "wind_speed": "m/s", "precipitation": "mm" }
+}

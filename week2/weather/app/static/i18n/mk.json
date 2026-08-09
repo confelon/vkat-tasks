@@ -1,0 +1,12 @@
+{
+  "language": "Македонски",
+  "title": "30-дневна прогноза",
+  "subtitle": "Времето еден месец однапред, предвидено со МЛ модел",
+  "date": "Датум",
+  "temperature": "Температура",
+  "humidity": "Влажност",
+  "pressure": "Притисок",
+  "wind_speed": "Брзина на ветер",
+  "precipitation": "Врнежи",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "м/с", "precipitation": "мм" }
+}

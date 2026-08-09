@@ -1,0 +1,12 @@
+{
+  "language": "Magyar",
+  "title": "30 napos előrejelzés",
+  "subtitle": "Az időjárás egy hónappal előre, ML-modell előrejelzése alapján",
+  "date": "Dátum",
+  "temperature": "Hőmérséklet",
+  "humidity": "Páratartalom",
+  "pressure": "Légnyomás",
+  "wind_speed": "Szélsebesség",
+  "precipitation": "Csapadék",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "Hgmm", "wind_speed": "m/s", "precipitation": "mm" }
+}

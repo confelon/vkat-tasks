@@ -1,0 +1,12 @@
+{
+  "language": "Íslenska",
+  "title": "30 daga spá",
+  "subtitle": "Veðrið mánuð fram í tímann, spáð af ML-líkani",
+  "date": "Dagsetning",
+  "temperature": "Hitastig",
+  "humidity": "Raki",
+  "pressure": "Loftþrýstingur",
+  "wind_speed": "Vindhraði",
+  "precipitation": "Úrkoma",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

@@ -1,0 +1,12 @@
+{
+  "language": "Română",
+  "title": "prognoză pe 30 de zile",
+  "subtitle": "Vremea cu o lună înainte, prezisă de un model ML",
+  "date": "Data",
+  "temperature": "Temperatură",
+  "humidity": "Umiditate",
+  "pressure": "Presiune",
+  "wind_speed": "Viteza vântului",
+  "precipitation": "Precipitații",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

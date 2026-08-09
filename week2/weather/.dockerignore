@@ -1,0 +1,4 @@
+# The prod image serves models; it never trains, so raw training data stays out
+app/data/raw/
+**/__pycache__/
+.env

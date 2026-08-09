@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Almaty Weather Forecast</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="card">
+    <select id="city"></select>
+    <select id="language"></select>
+    <h1 id="title"></h1>
+    <p class="hint" id="subtitle"></p>
+    <div class="table-wrap">
+      <table id="forecast-table"></table>
+    </div>
+    <div id="charts"></div>
+    <p class="footer">
+      <a href="/model.html" id="model-link"></a> ·
+      <a href="/readme.html" id="readme-link"></a> ·
+      <a href="https://open-meteo.com/" target="_blank">Weather data by Open-Meteo</a>
+    </p>
+  </div>
+
+  <script src="/vendor/jquery.min.js"></script>
+  <script src="/vendor/plotly.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

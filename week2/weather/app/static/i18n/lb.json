@@ -1,0 +1,12 @@
+{
+  "language": "Lëtzebuergesch",
+  "title": "30-Deeg-Prognos",
+  "subtitle": "D'Wieder ee Mount am Viraus, virausgesot vun engem ML-Modell",
+  "date": "Datum",
+  "temperature": "Temperatur",
+  "humidity": "Fiichtegkeet",
+  "pressure": "Loftdrock",
+  "wind_speed": "Wandvitesse",
+  "precipitation": "Nidderschlag",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

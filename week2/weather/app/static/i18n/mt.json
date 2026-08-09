@@ -1,0 +1,12 @@
+{
+  "language": "Malti",
+  "title": "tbassir ta' 30 jum",
+  "subtitle": "It-temp xahar 'il quddiem, imbassar minn mudell ML",
+  "date": "Data",
+  "temperature": "Temperatura",
+  "humidity": "Umdità",
+  "pressure": "Pressjoni",
+  "wind_speed": "Veloċità tar-riħ",
+  "precipitation": "Preċipitazzjoni",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

@@ -1,0 +1,12 @@
+{
+  "language": "Беларуская",
+  "title": "прагноз на 30 дзён",
+  "subtitle": "Надвор'е на месяц наперад паводле ML-мадэлі",
+  "date": "Дата",
+  "temperature": "Тэмпература",
+  "humidity": "Вільготнасць",
+  "pressure": "Ціск",
+  "wind_speed": "Хуткасць ветру",
+  "precipitation": "Ападкі",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "мм рт. сл.", "wind_speed": "м/с", "precipitation": "мм" }
+}

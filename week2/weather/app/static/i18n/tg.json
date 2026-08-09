@@ -1,0 +1,12 @@
+{
+  "language": "Тоҷикӣ",
+  "title": "пешгӯии 30-рӯза",
+  "subtitle": "Обу ҳаво як моҳ пеш, пешгӯии модели ML",
+  "date": "Сана",
+  "temperature": "Ҳарорат",
+  "humidity": "Намӣ",
+  "pressure": "Фишор",
+  "wind_speed": "Суръати шамол",
+  "precipitation": "Боришот",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "мм с.с.", "wind_speed": "м/с", "precipitation": "мм" }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fleet benchmark</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="card">
+    <a class="back" href="/model.html">← Model verification</a>
+    <h1>Fleet benchmark</h1>
+    <p class="hint">Reports are generated offline and read from disk — see readme.html for the commands</p>
+
+    <div class="tabs">
+      <button class="tab" data-pane="models-pane">Trained models</button>
+      <button class="tab" data-pane="depth-pane">History depth</button>
+      <button class="tab" data-pane="weight-pane">Sample weight</button>
+    </div>
+
+    <div class="tab-pane" id="models-pane">
+      <p class="note" id="benchmark-meta">Not generated yet — run: <code>docker compose run --rm weather python -m app.benchmark</code></p>
+      <div class="table-wrap">
+        <table id="benchmark-table"></table>
+      </div>
+      <div id="benchmark-anomalies"></div>
+    </div>
+
+    <div class="tab-pane" id="depth-pane">
+      <p class="note" id="depth-meta">Not generated yet — run: <code>docker compose run --rm weather python -m app.experiments depth</code></p>
+      <div class="chart-row">
+        <div class="mini-chart" id="depth-votes"></div>
+        <div class="mini-chart" id="depth-mae"></div>
+        <div class="mini-chart" id="depth-bias"></div>
+      </div>
+      <p class="note"><b>Why 10 years was chosen for the fleet:</b> accuracy barely moves across
+        depths (middle chart — note it is zoomed 5×; the whole swing is ~0.03 °C, within noise),
+        while cold bias grows steadily with history (right chart — old, cooler decades teach the
+        model yesterday's climate), and 10y wins the per-city vote outright (left chart; 40y is
+        best nowhere). The anomalies below list the Baltic/Caucasus exceptions where deeper
+        history genuinely helps.</p>
+      <div class="table-wrap">
+        <table id="depth-aggregate"></table>
+      </div>
+      <div class="table-wrap">
+        <table id="depth-table"></table>
+      </div>
+      <div id="depth-anomalies"></div>
+    </div>
+
+    <div class="tab-pane" id="weight-pane">
+      <p class="note" id="weight-meta">Not generated yet — run: <code>docker compose run --rm weather python -m app.experiments weight</code></p>
+      <div class="chart-row">
+        <div class="mini-chart" id="weight-votes"></div>
+        <div class="mini-chart" id="weight-mae"></div>
+        <div class="mini-chart" id="weight-bias"></div>
+      </div>
+      <p class="note"><b>Why weight 0.2 was chosen:</b> on accuracy the three options tie fleet-wide
+        (middle chart — zoomed 5×, the whole swing is ~0.01 °C), so the tie-breakers decide —
+        0.2 keeps the mean bias closest to zero (right chart) and wins the per-city vote (left chart). The effect is geographic: recency
+        weighting compensates fast-warming continental climates (Tashkent, Bishkek, Almaty) and
+        costs a little in some European ones; no city's response exceeds the ±0.1&nbsp;°C noise
+        floor, which is why the anomaly list below is typically empty.</p>
+      <div class="table-wrap">
+        <table id="weight-aggregate"></table>
+      </div>
+      <div class="table-wrap">
+        <table id="weight-table"></table>
+      </div>
+      <div id="weight-anomalies"></div>
+    </div>
+
+    <p class="footer"><a href="https://open-meteo.com/" target="_blank">Weather data by Open-Meteo</a></p>
+  </div>
+
+  <script src="/vendor/jquery.min.js"></script>
+  <script src="/vendor/plotly.min.js"></script>
+  <script src="/fleet.js"></script>
+</body>
+</html>

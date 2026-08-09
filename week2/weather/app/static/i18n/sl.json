@@ -1,0 +1,12 @@
+{
+  "language": "Slovenščina",
+  "title": "30-dnevna napoved",
+  "subtitle": "Vreme mesec dni vnaprej, napovedano z ML-modelom",
+  "date": "Datum",
+  "temperature": "Temperatura",
+  "humidity": "Vlažnost",
+  "pressure": "Tlak",
+  "wind_speed": "Hitrost vetra",
+  "precipitation": "Padavine",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

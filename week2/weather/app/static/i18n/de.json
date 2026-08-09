@@ -1,0 +1,12 @@
+{
+  "language": "Deutsch",
+  "title": "30-Tage-Vorhersage",
+  "subtitle": "Wetter einen Monat im Voraus, vorhergesagt von einem ML-Modell",
+  "date": "Datum",
+  "temperature": "Temperatur",
+  "humidity": "Luftfeuchtigkeit",
+  "pressure": "Luftdruck",
+  "wind_speed": "Windgeschwindigkeit",
+  "precipitation": "Niederschlag",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

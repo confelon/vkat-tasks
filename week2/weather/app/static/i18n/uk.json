@@ -1,0 +1,12 @@
+{
+  "language": "Українська",
+  "title": "прогноз на 30 днів",
+  "subtitle": "Погода на місяць уперед за прогнозом ML-моделі",
+  "date": "Дата",
+  "temperature": "Температура",
+  "humidity": "Вологість",
+  "pressure": "Тиск",
+  "wind_speed": "Швидкість вітру",
+  "precipitation": "Опади",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "мм рт. ст.", "wind_speed": "м/с", "precipitation": "мм" }
+}

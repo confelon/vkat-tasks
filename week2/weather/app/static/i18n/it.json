@@ -1,0 +1,12 @@
+{
+  "language": "Italiano",
+  "title": "previsioni a 30 giorni",
+  "subtitle": "Il meteo con un mese di anticipo, previsto da un modello ML",
+  "date": "Data",
+  "temperature": "Temperatura",
+  "humidity": "Umidità",
+  "pressure": "Pressione",
+  "wind_speed": "Velocità del vento",
+  "precipitation": "Precipitazioni",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}

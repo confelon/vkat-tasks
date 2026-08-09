@@ -1,0 +1,12 @@
+{
+  "language": "Հայերեն",
+  "title": "30-օրյա կանխատեսում",
+  "subtitle": "Եղանակը մեկ ամիս առաջ՝ ML մոդելի կանխատեսմամբ",
+  "date": "Ամսաթիվ",
+  "temperature": "Ջերմաստիճան",
+  "humidity": "Խոնավություն",
+  "pressure": "Ճնշում",
+  "wind_speed": "Քամու արագություն",
+  "precipitation": "Տեղումներ",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "մմ ս.ս.", "wind_speed": "մ/վ", "precipitation": "մմ" }
+}

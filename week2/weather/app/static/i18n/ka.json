@@ -1,0 +1,12 @@
+{
+  "language": "ქართული",
+  "title": "30-დღიანი პროგნოზი",
+  "subtitle": "ამინდი ერთი თვით ადრე, ML მოდელის პროგნოზით",
+  "date": "თარიღი",
+  "temperature": "ტემპერატურა",
+  "humidity": "ტენიანობა",
+  "pressure": "წნევა",
+  "wind_speed": "ქარის სიჩქარე",
+  "precipitation": "ნალექი",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "მმ ვწყ. სვ.", "wind_speed": "მ/წმ", "precipitation": "მმ" }
+}

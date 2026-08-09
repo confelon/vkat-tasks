@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model verification</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="card">
+    <a class="back" href="/">← Forecast</a>
+    <select id="city"></select>
+    <h1>Model verification</h1>
+    <p class="hint">How the models score on a held-out validation year</p>
+    <div class="table-wrap">
+      <table id="ladder"></table>
+    </div>
+    <p class="note" id="summary"></p>
+    <h2>Training conditions</h2>
+    <div class="table-wrap">
+      <table id="training"></table>
+    </div>
+    <div id="horizon-chart"></div>
+    <p class="note">
+      MAE — mean absolute error on the validation year, in the unit of each value (pressure in hPa).
+      Skill — improvement over climatology: 1 − MAE<sub>model</sub> / MAE<sub>climatology</sub>;
+      positive means better than predicting the seasonal average, 0 means no better.
+      Bias — mean signed error (prediction − actual): near zero is healthy, a large value means
+      the model runs systematically high or low even if its MAE looks fine.
+    </p>
+    <p class="footer">
+      <a href="/fleet.html">Fleet benchmark →</a> ·
+      <a href="https://open-meteo.com/" target="_blank">Weather data by Open-Meteo</a>
+    </p>
+  </div>
+
+  <script src="/vendor/jquery.min.js"></script>
+  <script src="/vendor/plotly.min.js"></script>
+  <script src="/model.js"></script>
+</body>
+</html>

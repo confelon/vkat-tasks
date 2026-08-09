@@ -1,0 +1,12 @@
+{
+  "language": "Azərbaycanca",
+  "title": "30 günlük proqnoz",
+  "subtitle": "Hava bir ay əvvəlcədən, ML modelinin proqnozu ilə",
+  "date": "Tarix",
+  "temperature": "Temperatur",
+  "humidity": "Rütubət",
+  "pressure": "Təzyiq",
+  "wind_speed": "Külək sürəti",
+  "precipitation": "Yağıntı",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mm c.süt.", "wind_speed": "m/s", "precipitation": "mm" }
+}

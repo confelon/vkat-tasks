@@ -1,0 +1,12 @@
+services:
+  weather:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ALL_PROXY=${ALL_PROXY:-}
+    volumes:
+      - ./app:/app/app
+      - ./README.md:/app/README.md
+      - ./README.ru.md:/app/README.ru.md
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

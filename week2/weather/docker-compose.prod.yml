@@ -1,0 +1,8 @@
+services:
+  weather:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ALL_PROXY=${ALL_PROXY:-}
+    restart: unless-stopped

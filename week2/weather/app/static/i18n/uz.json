@@ -1,0 +1,12 @@
+{
+  "language": "Oʻzbekcha",
+  "title": "30 kunlik prognoz",
+  "subtitle": "Ob-havo bir oy oldindan, ML modeli bashorati",
+  "date": "Sana",
+  "temperature": "Harorat",
+  "humidity": "Namlik",
+  "pressure": "Bosim",
+  "wind_speed": "Shamol tezligi",
+  "precipitation": "Yog'ingarchilik",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mm sim. ust.", "wind_speed": "m/s", "precipitation": "mm" }
+}

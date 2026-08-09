@@ -1,0 +1,14 @@
+{
+  "language": "Қазақша",
+  "model_link": "Модель сапасын тексеру",
+  "readme_link": "Жоба құжаттамасы",
+  "title": "30 күндік болжам",
+  "subtitle": "ML моделі болжаған бір ай алдағы ауа райы",
+  "date": "Күні",
+  "temperature": "Температура",
+  "humidity": "Ылғалдылық",
+  "pressure": "Қысым",
+  "wind_speed": "Жел жылдамдығы",
+  "precipitation": "Жауын-шашын",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "мм сын. бағ.", "wind_speed": "м/с", "precipitation": "мм" }
+}

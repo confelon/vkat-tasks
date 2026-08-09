@@ -1,0 +1,12 @@
+{
+  "language": "Shqip",
+  "title": "parashikimi 30-ditor",
+  "subtitle": "Moti një muaj përpara, parashikuar nga një model ML",
+  "date": "Data",
+  "temperature": "Temperatura",
+  "humidity": "Lagështia",
+  "pressure": "Presioni",
+  "wind_speed": "Shpejtësia e erës",
+  "precipitation": "Reshjet",
+  "units": { "temperature": "°C", "humidity": "%", "pressure": "mmHg", "wind_speed": "m/s", "precipitation": "mm" }
+}
