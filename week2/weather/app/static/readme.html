@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How-to: data, training, benchmark</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
   <style>
     /* The page is README.md rendered client-side by vendored marked.js */
     .howto { text-align: left; }
@@ -26,23 +26,24 @@
 </head>
 <body>
   <div class="card howto">
-    <a class="back" href="/">← Forecast</a>
+    <a class="back" href="./">← Forecast</a>
     <div id="content"></div>
     <p class="footer"><a href="https://open-meteo.com/" target="_blank">Weather data by Open-Meteo</a></p>
   </div>
 
-  <script src="/vendor/marked.min.js"></script>
+  <script src="vendor/marked.min.js"></script>
   <script>
     // Russian readers get README.ru.md, everyone else README.md — same language
     // pick as the forecast page: saved choice first, then the browser's list
     const lang = localStorage.getItem("lang") || (navigator.language || "").slice(0, 2);
-    fetch(lang === "ru" ? "/readme?lang=ru" : "/readme")
+    fetch(lang === "ru" ? "readme?lang=ru" : "readme")
       .then((response) => response.text())
       .then((markdown) => {
-        // The README hardcodes the dev address; on this page show whatever
-        // host and port the app is actually served from (as in the URL bar)
+        // The README hardcodes the dev address; show the address the app is
+        // actually served from — origin plus the reverse-proxy sub-path, if any
+        const appBase = new URL(".", location.href).href.replace(/\/$/, "");
         document.getElementById("content").innerHTML = marked.parse(
-          markdown.replaceAll("http://localhost:8000", location.origin)
+          markdown.replaceAll("http://localhost:8000", appBase)
         );
       });
   </script>

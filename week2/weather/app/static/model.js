@@ -75,7 +75,7 @@ function renderHorizonChart(metrics) {
 
 function loadCity(city) {
   localStorage.setItem("city", city);
-  $.getJSON("/api/models", { city: city }, function (byModel) {
+  $.getJSON("api/models", { city: city }, function (byModel) {
     const metrics = Object.values(byModel)[0];
     renderLadder(metrics);
     $("#summary").text(`Winner: ${LABELS[metrics.winner] || metrics.winner} — saved and used for the forecast page.`);
@@ -88,7 +88,7 @@ $("#city").on("change", function () {
   loadCity(this.value);
 });
 
-$.getJSON("/api/cities", function (cities) {
+$.getJSON("api/cities", function (cities) {
   const names = Object.keys(cities);
   const $select = $("#city");
   names.forEach((name) => $select.append($("<option>").val(name).text(name)));

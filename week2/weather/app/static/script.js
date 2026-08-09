@@ -27,7 +27,7 @@ function pickLanguage(available) {
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem("lang", lang);
-  $.getJSON(`/i18n/${lang}.json`, function (t) {
+  $.getJSON(`i18n/${lang}.json`, function (t) {
     translations = t;
     renderAll();
   });
@@ -36,7 +36,7 @@ function setLanguage(lang) {
 function setCity(city) {
   currentCity = city;
   localStorage.setItem("city", city);
-  $.getJSON("/api/forecast", { city: city }, function (days) {
+  $.getJSON("api/forecast", { city: city }, function (days) {
     forecastDays = days;
     renderAll();
   });
@@ -105,7 +105,7 @@ $("#city").on("change", function () {
   setCity(this.value);
 });
 
-$.getJSON("/api/languages", function (languages) {
+$.getJSON("api/languages", function (languages) {
   const $select = $("#language");
   for (const [code, name] of Object.entries(languages)) {
     $select.append($("<option>").val(code).text(name));
@@ -115,7 +115,7 @@ $.getJSON("/api/languages", function (languages) {
   setLanguage(lang);
 });
 
-$.getJSON("/api/cities", function (cities) {
+$.getJSON("api/cities", function (cities) {
   const names = Object.keys(cities);
   const $select = $("#city");
   names.forEach((name) => $select.append($("<option>").val(name).text(name)));

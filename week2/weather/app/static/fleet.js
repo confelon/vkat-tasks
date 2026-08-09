@@ -143,7 +143,7 @@ function renderExperiment(prefix, url, variantHeader, label) {
   });
 }
 
-$.getJSON("/api/benchmark", function (report) {
+$.getJSON("api/benchmark", function (report) {
   $("#benchmark-meta").text(`Generated on ${report.generated_at} from ${report.models} trained model(s). Sorted by overall score (MAE / std, lower = better).`);
   fillTable(
     $("#benchmark-table"),
@@ -156,5 +156,5 @@ $.getJSON("/api/benchmark", function (report) {
   fillAnomalies($("#benchmark-anomalies"), report.anomalies);
 });
 
-renderExperiment("depth", "/api/depth-benchmark", "Depth", (v) => `${v}y`);
-renderExperiment("weight", "/api/weight-benchmark", "Weight", (v) => `w=${v}`);
+renderExperiment("depth", "api/depth-benchmark", "Depth", (v) => `${v}y`);
+renderExperiment("weight", "api/weight-benchmark", "Weight", (v) => `w=${v}`);
