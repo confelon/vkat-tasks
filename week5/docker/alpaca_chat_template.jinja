@@ -1,0 +1,10 @@
+{#- Renders an OpenAI-style chat request into the exact prompt layout used in
+    training. Only the last user message is used: the model was fine-tuned on
+    single-turn instructions, so there is no history or system prompt to render.
+    Everything is emitted from one string literal with explicit \n escapes, so a
+    Windows checkout cannot smuggle carriage returns into the prompt. -#}
+{%- set ns = namespace(instruction='') -%}
+{%- for message in messages -%}
+{%- if message['role'] == 'user' -%}{%- set ns.instruction = message['content'] -%}{%- endif -%}
+{%- endfor -%}
+{{- '### Instruction:\n' + ns.instruction + '\n\n### Response:\n' -}}

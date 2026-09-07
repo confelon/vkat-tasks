@@ -1,0 +1,56 @@
+# Prod-конфигурация: код внутри образа, с хоста монтируются только артефакты,
+# нужные модели.
+#
+#   docker compose -f docker-compose.prod.yml build
+#   docker compose -f docker-compose.prod.yml run --rm app python scripts/train.py
+#   docker compose -f docker-compose.prod.yml up vllm
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      # Исходники не монтируются. Только артефакты модели и кэш загрузок,
+      # которые должны пережить контейнер.
+      - ./output:/workspace/output
+      - hf-cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  vllm:
+    image: vllm/vllm-openai:v0.28.0
+    ports:
+      - "8000:8000"
+    environment:
+      - VLLM_USE_V2_MODEL_RUNNER=0
+    volumes:
+      - ./output:/output
+      - ./docker/alpaca_chat_template.jinja:/chat_template.jinja
+    ipc: host
+    restart: unless-stopped
+    command: >
+      /output/merged
+      --served-model-name alpaca-lora
+      --dtype half
+      --max-model-len 1024
+      --max-num-seqs 8
+      --enforce-eager
+      --gpu-memory-utilization 0.5
+      --chat-template /chat_template.jinja
+      --host 0.0.0.0
+      --port 8000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  hf-cache:

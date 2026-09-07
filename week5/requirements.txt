@@ -1,0 +1,6 @@
+# torch, CUDA and cuDNN come from the base image (see docker/Dockerfile).
+transformers==5.16.1
+peft==0.20.0
+datasets==5.0.1
+accelerate==1.14.0
+openai==3.8.0

@@ -1,0 +1,64 @@
+# Dev-конфигурация: исходники монтируются с хоста, правка подхватывается
+# на следующем запуске без пересборки.
+#
+#   docker compose build
+#   docker compose run --rm app python scripts/train.py
+#   docker compose up vllm
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./app:/workspace/app
+      - ./scripts:/workspace/scripts
+      - ./output:/workspace/output
+      - hf-cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  vllm:
+    # Официальный образ как есть. Его entrypoint — "vllm serve", поэтому
+    # в command только аргументы.
+    image: vllm/vllm-openai:v0.28.0
+    ports:
+      - "8000:8000"
+    environment:
+      # V2 model runner требует pinned host memory, которой нет под WSL2;
+      # без этого движок не стартует.
+      - VLLM_USE_V2_MODEL_RUNNER=0
+    volumes:
+      # Слитая модель из scripts/merge_adapter.py.
+      - ./output:/output
+      # Конфигурация, а не код, поэтому монтируется и в prod.
+      - ./docker/alpaca_chat_template.jinja:/chat_template.jinja
+    # Воркеры vLLM общаются через shared memory; дефолтных 64 MB мало.
+    ipc: host
+    command: >
+      /output/merged
+      --served-model-name alpaca-lora
+      --dtype half
+      --max-model-len 1024
+      --max-num-seqs 8
+      --enforce-eager
+      --gpu-memory-utilization 0.5
+      --chat-template /chat_template.jinja
+      --host 0.0.0.0
+      --port 8000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  # Named volume, а не папка хоста: кэш Hugging Face использует symlink'и и
+  # файловые блокировки, которые медленны и ненадёжны на Windows-монтировании.
+  hf-cache:
